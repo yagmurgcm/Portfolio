@@ -1,0 +1,128 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+  --color-1: #6d49d1;
+  --color-2: #b149d1;
+  --color-3: #d149ad;
+  --text-primary: #1f1b2e;
+  --text-secondary: #5f5677;
+  --surface: #ffffff;
+}
+
+body {
+  @apply min-h-screen antialiased;
+  color: var(--text-primary);
+  font-family: var(--font-inter), 'Inter', sans-serif;
+  background: radial-gradient(circle at 10% 20%, rgba(109, 73, 209, 0.15), transparent 45%),
+    radial-gradient(circle at 80% 0%, rgba(209, 73, 173, 0.2), transparent 45%),
+    linear-gradient(180deg, #fefbff 0%, #f5f0ff 45%, #fdf4ff 100%);
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-avegas), 'Georgia', serif;
+  letter-spacing: 0.02em;
+  color: var(--text-primary);
+}
+
+p,
+a,
+li,
+span,
+label,
+input,
+textarea,
+button {
+  font-family: var(--font-inter), 'Inter', sans-serif;
+  color: var(--text-secondary);
+}
+
+.section-shell {
+  @apply px-6 py-16 md:px-12 lg:px-20;
+}
+
+.hero-bg {
+  background: radial-gradient(circle at top left, rgba(255, 255, 255, 0.9), transparent 50%),
+    linear-gradient(120deg, rgba(109, 73, 209, 0.12), rgba(209, 73, 173, 0.12));
+  border-radius: 40px;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-bg::before,
+.hero-bg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.6), transparent 50%);
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+.hero-bg::after {
+  background: radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.5), transparent 45%);
+  filter: blur(20px);
+  pointer-events: none;
+}
+
+.glass-card {
+  backdrop-filter: blur(18px);
+  background: rgba(255, 255, 255, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  box-shadow: 0 20px 60px rgba(109, 73, 209, 0.12);
+}
+
+.wave-panel {
+  border-radius: 32px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(250, 244, 255, 0.9));
+  border: 1px solid rgba(109, 73, 209, 0.08);
+  box-shadow: 0 25px 80px rgba(102, 72, 200, 0.08);
+  position: relative;
+  overflow: hidden;
+}
+
+.wave-panel::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 15% 20%, rgba(177, 73, 209, 0.1), transparent 45%);
+  z-index: 0;
+}
+
+.wave-panel > * {
+  position: relative;
+  z-index: 1;
+}
+
+.card-surface {
+  @apply rounded-3xl border border-white/60 bg-white/80;
+  backdrop-filter: blur(18px);
+  box-shadow: 0 25px 70px rgba(31, 27, 46, 0.08);
+}
+
+.info-card {
+  @apply rounded-3xl border border-white/60 bg-white/80 p-6;
+  backdrop-filter: blur(14px);
+  box-shadow: 0 20px 60px rgba(109, 73, 209, 0.12);
+}
+
+.gradient-btn {
+  background-image: linear-gradient(120deg, var(--color-1), var(--color-2), var(--color-3));
+  color: #ffffff;
+  background-size: 200% 200%;
+  transition: background-position 0.4s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 15px 30px rgba(177, 73, 209, 0.25);
+}
+
+.gradient-btn:hover {
+  background-position: 100% 0;
+  transform: translateY(-2px);
+}
+
+.soft-shadow {
+  box-shadow: 0 20px 80px rgba(32, 28, 45, 0.12);
+}
